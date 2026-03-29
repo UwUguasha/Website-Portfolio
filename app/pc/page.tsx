@@ -45,10 +45,10 @@ export default function PCPage() {
 
     <a href="https://github.com/UwUguasha/Gamejam-Project-25-26" target="_blank">
       <div className="box project-card">
-        <img src="/project2.jpg" className="project-image" />
+        <img src="/SuikaGameDsImage.png" className="project-image" />
 
         <div className="project-content">
-          <div className="project-title">Dashbreaker</div>
+          <div className="project-title">(WIP) Dashbreaker</div>
 
           <div className="project-desc">
             A 3D game inspired by franchises like Sonic or the game Haste, for the Manacor-Inca GameJam of 2026

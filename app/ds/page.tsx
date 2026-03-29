@@ -34,7 +34,7 @@ export default function NintendoDsPage() {
         <img src="/SuikaGameDsImage.png" className="project-image" />
 
         <div className="project-content">
-          <div className="project-title">Suika Game DS</div>
+          <div className="project-title">(WIP) Suika Game DS</div>
 
           <div className="project-desc">
             A Suika Game clone for the DS
