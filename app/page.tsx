@@ -49,7 +49,7 @@ export default function Home() {
       <div className="top">
         <a href="https://github.com/UwUguasha" target="_blank">
         <div className="box profile">
-          <img src="/profile.jpg" alt="profile pic" />
+          <img src="/ProfilePic.png" alt="profile pic" />
         </div>
         </a>
 

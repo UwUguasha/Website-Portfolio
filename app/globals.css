@@ -164,6 +164,23 @@ h1, h2, h3, p {
   border: 1px solid #00bcd4;
 }
 
+.box.profile {
+  width: 160px;        /* box width */
+  height: 160px;       /* box height */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;          /* remove inner padding */
+}
+
+.profile img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 4px;
+  border: 1px solid #00bcd4;
+}
+
 .about {
   flex: 1;
   line-height: 1.5;
