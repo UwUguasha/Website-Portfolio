@@ -63,7 +63,7 @@ export default function ContactPage() {
             <p>
               {"> "}
               <a
-                href="https://linkedin.com/in/yourprofile"
+                href="https://www.linkedin.com/in/iridis-ina-laureano-garcia-63824735a/"
                 target="_blank"
               >
                 linkedin.exe
