@@ -327,3 +327,81 @@ a:hover {
   content: "_";
   animation: blink 1s infinite;
 }
+
+/* ===== MOBILE FIX ===== */
+@media (max-width: 768px) {
+
+  /* STACK TOP SECTION */
+  .top {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .box.profile {
+    width: 120px;
+    height: 120px;
+  }
+
+  /* ABOUT TEXT FULL WIDTH */
+  .about {
+    width: 100%;
+  }
+
+  /* STACK PLATFORMS */
+  .platforms {
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+  }
+
+  .platform {
+    width: 90%; /* instead of fixed 420px */
+  }
+
+  /* SMALLER 3D AREA */
+  .canvas-container {
+    height: 220px;
+  }
+
+  /* PROJECT CARDS STACK */
+  .project-card {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .project-content {
+    flex-direction: column;
+    gap: 5px;
+  }
+
+  .project-desc {
+    text-align: left;
+  }
+
+  .project-image {
+    width: 100%;
+    height: auto;
+  }
+
+  /* FIX BUTTON POSITIONS */
+  .back-button {
+    position: static;
+    margin-bottom: 10px;
+  }
+
+  .lang-switch.top-right {
+    position: static;
+    justify-content: center;
+    margin-bottom: 10px;
+  }
+
+  /* TEXT SCALE */
+  h2 {
+    font-size: 1.3rem;
+  }
+
+  p {
+    font-size: 0.95rem;
+  }
+}
