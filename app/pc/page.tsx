@@ -71,7 +71,7 @@ export default function PCPage() {
       </div>
     </a>
 
-    <a href="https://github.com/UwUguasha" target="_blank">
+    <a href="https://github.com/UwUguasha/Website-Portfolio" target="_blank">
       <div className="box project-card">
         <img src="/WebsiteImage.png" className="project-image" />
 
