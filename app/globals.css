@@ -1,0 +1,312 @@
+/* globals.css */
+
+/* ===== RESET / BASE ===== */
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: #050505;
+  color: #00bcd4;
+  font-family: "Courier New", monospace;
+  overflow-x: hidden;
+}
+
+/* ===== CRT SCANLINES ===== */
+
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+
+  background: repeating-linear-gradient(
+    to bottom,
+    rgba(0, 188, 212, 0.12) 0px,
+    rgba(0, 188, 212, 0.12) 2px,
+    transparent 3px,
+    transparent 5px
+  );
+
+  pointer-events: none;
+  z-index: 999;
+
+  animation: scanlineMove 6s linear infinite;
+}
+
+@keyframes scanlineMove {
+  0% { transform: translateY(0px); }
+  100% { transform: translateY(10px); }
+}
+
+/* ===== RGB SHIFT ===== */
+
+body::after {
+  content: "";
+  position: fixed;
+  inset: 0;
+
+  background:
+    linear-gradient(rgba(255,0,0,0.03), rgba(255,0,0,0.03)),
+    linear-gradient(rgba(0,255,0,0.03), rgba(0,255,0,0.03)),
+    linear-gradient(rgba(0,0,255,0.03), rgba(0,0,255,0.03));
+
+  mix-blend-mode: screen;
+  pointer-events: none;
+  z-index: 998;
+
+  animation: rgbShift 2s infinite alternate;
+}
+
+@keyframes rgbShift {
+  0% { transform: translate(0px, 0px); }
+  100% { transform: translate(1px, -1px); }
+}
+
+/* ===== VIGNETTE ===== */
+
+.container::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+
+  background: radial-gradient(
+    circle,
+    transparent 60%,
+    rgba(0, 0, 0, 0.6) 100%
+  );
+
+  pointer-events: none;
+  z-index: 997;
+}
+
+/* ===== TEXT ===== */
+
+h1, h2, h3, p {
+  text-shadow: 0 0 6px #00bcd4;
+}
+
+/* ===== CONTAINER ===== */
+
+.container {
+  position: relative;
+  padding: 50px 20px 20px 20px;
+}
+
+/* ===== LANGUAGE SWITCH ===== */
+
+.lang-switch.top-right {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  display: flex;
+  gap: 0.5rem;
+  z-index: 10;
+}
+
+.lang-switch button {
+  background: transparent;
+  border: 1px solid #00bcd4;
+  color: #00bcd4;
+  padding: 5px 12px;
+  cursor: pointer;
+  font-family: inherit;
+  transition: all 0.2s ease;
+}
+
+.lang-switch button:hover {
+  background-color: #00bcd4;
+  color: #050505;
+  box-shadow: 0 0 10px #00bcd4;
+}
+
+/* ===== BOX ===== */
+
+.box {
+  border: 1px solid #00bcd4;
+  padding: 16px;
+  position: relative;
+  background-color: rgba(0, 188, 212, 0.05);
+  transition: all 0.2s ease;
+  animation: flicker 4s infinite;
+}
+
+.box::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border: 1px solid #00bcd4;
+  filter: blur(8px);
+  opacity: 0.5;
+  pointer-events: none;
+}
+
+.box:hover {
+  box-shadow: 0 0 16px #00bcd4;
+  transform: translateY(-3px);
+}
+
+/* ===== TOP ===== */
+
+.top {
+  display: flex;
+  gap: 20px;
+  align-items: flex-start;
+}
+
+.profile img {
+  width: 120px;
+  height: 120px;
+  object-fit: cover;
+  border-radius: 4px;
+  border: 1px solid #00bcd4;
+}
+
+.about {
+  flex: 1;
+  line-height: 1.5;
+}
+
+/* ===== BOTTOM ===== */
+
+.bottom {
+  margin-top: 60px;
+}
+
+.bottom h2 {
+  margin-bottom: 10px;
+}
+
+/* ===== PLATFORMS ===== */
+
+.platforms {
+  display: flex;
+  justify-content: space-evenly;
+  gap: 60px;
+  margin-top: 40px;
+}
+
+.platform {
+  width: 420px;
+  text-align: center;
+}
+
+.canvas-container {
+  width: 100%;
+  height: 320px;
+}
+
+/* ===== FLICKER ===== */
+
+@keyframes flicker {
+  0%   { opacity: 0.92; }
+  10%  { opacity: 1; }
+  20%  { opacity: 0.9; }
+  30%  { opacity: 1; }
+  40%  { opacity: 0.95; }
+  50%  { opacity: 1; }
+  60%  { opacity: 0.93; }
+  70%  { opacity: 1; }
+  80%  { opacity: 0.96; }
+  90%  { opacity: 1; }
+  100% { opacity: 0.94; }
+}
+
+/* ===== PROJECT LIST (NEW) ===== */
+
+.project-card {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  margin-bottom: 20px;
+}
+
+.project-image {
+  width: 120px;
+  height: 80px;
+  object-fit: cover;
+  border: 1px solid #00bcd4;
+}
+
+.project-content {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.project-title {
+  font-weight: bold;
+  min-width: 150px;
+}
+
+.project-desc {
+  flex: 1;
+  text-align: right;
+  opacity: 0.8;
+}
+
+/* ===== LINKS ===== */
+
+a {
+  color: #00bcd4;
+  text-decoration: none;
+}
+
+a:hover {
+  text-shadow: 0 0 8px #00bcd4;
+}
+
+/* ===== BACK BUTTON ====== */
+.back-button {
+  position: absolute;
+  top: 1rem;
+  left: 1rem;
+
+  background: transparent;
+  border: 1px solid #00bcd4;
+  color: #00bcd4;
+
+  padding: 6px 14px;
+  cursor: pointer;
+  font-family: inherit;
+
+  transition: all 0.2s ease;
+}
+
+.back-button:hover {
+  background-color: #00bcd4;
+  color: #050505;
+  box-shadow: 0 0 10px #00bcd4;
+}
+
+/* ===== CONTACT BUTTON ===== */
+.contact-button {
+  margin-top: 10px;
+
+  background: transparent;
+  border: 1px solid #00bcd4;
+  color: #00bcd4;
+
+  padding: 8px 16px;
+  cursor: pointer;
+  font-family: inherit;
+
+  transition: all 0.2s ease;
+}
+
+.contact-button:hover {
+  background-color: #00bcd4;
+  color: #050505;
+  box-shadow: 0 0 12px #00bcd4;
+}
+
+@keyframes blink {
+  50% { opacity: 0; }
+}
+
+.cursor::after {
+  content: "_";
+  animation: blink 1s infinite;
+}
